@@ -50,10 +50,8 @@ public class MakeShortUrlName {
 				}
 			}
 			if(check == 0){
-				System.out.println("여기?");
 				standKey = makeshortUrlName_step2(standKey);
 			}else{
-				System.out.println("여기??????");
 				result = standKey;
 				break;
 			}
@@ -82,14 +80,12 @@ public class MakeShortUrlName {
 	 */
 	private String makeshortUrlName_step2(String asIsKey){
 		String stnKey = asIsKey;
-		System.out.println("stnKey : "+stnKey);
 		StringBuilder changeVar = new StringBuilder(stnKey);
 		if(stnKey.indexOf("Y")> -1){
 			if(stnKey.substring(7,8).equals("Y")){
 				if("YYYYYYYY".equals(stnKey)){
 					changeVar = new StringBuilder("11111111");
 				}else{
-					System.out.println("7~8 라인을 들어왔습니다.");
 					int po = 10;
 					if(stnKey.substring(0,8).lastIndexOf("Y") > -1){
 						int yIndex = stnKey.substring(0,8).lastIndexOf("Y");
@@ -112,24 +108,19 @@ public class MakeShortUrlName {
 							changeVar.setCharAt(j, '1');//그 이하단은 모두 1로 reset해준다.
 						}
 					}
-					System.out.println("changeVar : "+changeVar);
 				}
 			}else if(stnKey.substring(6,7).equals("Y")){
-				System.out.println("6~7 라인을 들어왔습니다.");
 				String pointVar = stnKey.substring(6,7);
 				int po = 10;
-				if(stnKey.substring(0,6).lastIndexOf("Y") > -1){
+				if(stnKey.substring(0,7).lastIndexOf("Y") > -1){
 					int yIndex = stnKey.substring(0,6).lastIndexOf("Y");
 					for(int i=5;i>-1;i--){
-						System.out.println("test : "+stnKey.substring(i,i+1));
 						if(!"Y".equals(stnKey.substring(i,i+1)) && yIndex!= i){
 							po = i;
 							break;
 						}
 					}
-					System.out.println("확인해봐라 po : "+po);		
 					String stdVar = stnKey.substring(0,6).substring(po, po+1);
-					System.out.println("확인해봐라 : "+stdVar);		
 					int position = mainString.indexOf(stdVar);
 					char as = mainString.charAt(position+1);
 					for(int j=po; j<8; j++){
@@ -142,7 +133,6 @@ public class MakeShortUrlName {
 				}else{	
 					po = 5;
 					String stdVar = stnKey.substring(0,6).substring(po, po+1);
-					System.out.println("확인해봐라 : "+stdVar);		
 					int position = mainString.indexOf(stdVar);
 					char as = mainString.charAt(position+1);
 					for(int j=po; j<8; j++){
@@ -153,23 +143,18 @@ public class MakeShortUrlName {
 						}
 					}
 				}
-				System.out.println("changeVar : "+changeVar);
 			}else if(stnKey.substring(5,6).equals("Y")){
-				System.out.println("5~6 라인을 들어왔습니다.");
 				String pointVar = stnKey.substring(5,6);
 				int po = 10;
-				if(stnKey.substring(0,5).lastIndexOf("Y") > -1){
+				if(stnKey.substring(0,6).lastIndexOf("Y") > -1){
 					int yIndex = stnKey.substring(0,5).lastIndexOf("Y");
 					for(int i=4;i>-1;i--){
-						System.out.println("test : "+stnKey.substring(i,i+1));
 						if(!"Y".equals(stnKey.substring(i,i+1)) && yIndex!= i){
 							po = i;
 							break;
 						}
 					}
-					System.out.println("확인해봐라 po : "+po);		
 					String stdVar = stnKey.substring(0,5).substring(po, po+1);
-					System.out.println("확인해봐라 : "+stdVar);		
 					int position = mainString.indexOf(stdVar);
 					char as = mainString.charAt(position+1);
 					for(int j=po; j<8; j++){
@@ -182,7 +167,6 @@ public class MakeShortUrlName {
 				}else{	
 					po = 4;
 					String stdVar = stnKey.substring(0,5).substring(po, po+1);
-					System.out.println("확인해봐라 : "+stdVar);		
 					int position = mainString.indexOf(stdVar);
 					char as = mainString.charAt(position+1);
 					for(int j=po; j<8; j++){
@@ -193,23 +177,18 @@ public class MakeShortUrlName {
 						}
 					}
 				}
-				System.out.println("changeVar : "+changeVar);
 			}else if(stnKey.substring(4,5).equals("Y")){
-				System.out.println("4~5 라인을 들어왔습니다.");
 				String pointVar = stnKey.substring(4,5);
 				int po = 10;
-				if(stnKey.substring(0,4).lastIndexOf("Y") > -1){
+				if(stnKey.substring(0,5).lastIndexOf("Y") > -1){
 					int yIndex = stnKey.substring(0,4).lastIndexOf("Y");
 					for(int i=3;i>-1;i--){
-						System.out.println("test : "+stnKey.substring(i,i+1));
 						if(!"Y".equals(stnKey.substring(i,i+1)) && yIndex!= i){
 							po = i;
 							break;
 						}
 					}
-					System.out.println("확인해봐라 po : "+po);		
 					String stdVar = stnKey.substring(0,4).substring(po, po+1);
-					System.out.println("확인해봐라 : "+stdVar);		
 					int position = mainString.indexOf(stdVar);
 					char as = mainString.charAt(position+1);
 					for(int j=po; j<8; j++){
@@ -222,7 +201,6 @@ public class MakeShortUrlName {
 				}else{	
 					po = 3;
 					String stdVar = stnKey.substring(0,4).substring(po, po+1);
-					System.out.println("확인해봐라 : "+stdVar);		
 					int position = mainString.indexOf(stdVar);
 					char as = mainString.charAt(position+1);
 					for(int j=po; j<8; j++){
@@ -233,23 +211,18 @@ public class MakeShortUrlName {
 						}
 					}
 				}
-				System.out.println("changeVar : "+changeVar);
 			}else if(stnKey.substring(3,4).equals("Y")){
-				System.out.println("3~4 라인을 들어왔습니다.");
 				String pointVar = stnKey.substring(3,4);
 				int po = 10;
-				if(stnKey.substring(0,3).lastIndexOf("Y") > -1){
+				if(stnKey.substring(0,4).lastIndexOf("Y") > -1){
 					int yIndex = stnKey.substring(0,3).lastIndexOf("Y");
 					for(int i=2;i>-1;i--){
-						System.out.println("test : "+stnKey.substring(i,i+1));
 						if(!"Y".equals(stnKey.substring(i,i+1)) && yIndex!= i){
 							po = i;
 							break;
 						}
 					}
-					System.out.println("확인해봐라 po : "+po);		
 					String stdVar = stnKey.substring(0,3).substring(po, po+1);
-					System.out.println("확인해봐라 : "+stdVar);		
 					int position = mainString.indexOf(stdVar);
 					char as = mainString.charAt(position+1);
 					for(int j=po; j<8; j++){
@@ -262,7 +235,6 @@ public class MakeShortUrlName {
 				}else{	
 					po = 2;
 					String stdVar = stnKey.substring(0,3).substring(po, po+1);
-					System.out.println("확인해봐라 : "+stdVar);		
 					int position = mainString.indexOf(stdVar);
 					char as = mainString.charAt(position+1);
 					for(int j=po; j<8; j++){
@@ -273,23 +245,18 @@ public class MakeShortUrlName {
 						}
 					}
 				}
-				System.out.println("changeVar : "+changeVar);
 			}else if(stnKey.substring(2,3).equals("Y")){
-				System.out.println("2~3 라인을 들어왔습니다.");
 				String pointVar = stnKey.substring(2,3);
 				int po = 10;
-				if(stnKey.substring(0,2).lastIndexOf("Y") > -1){
+				if(stnKey.substring(0,3).lastIndexOf("Y") > -1){
 					int yIndex = stnKey.substring(0,2).lastIndexOf("Y");
 					for(int i=1;i>-1;i--){
-						System.out.println("test : "+stnKey.substring(i,i+1));
 						if(!"Y".equals(stnKey.substring(i,i+1)) && yIndex!= i){
 							po = i;
 							break;
 						}
 					}
-					System.out.println("확인해봐라 po : "+po);		
 					String stdVar = stnKey.substring(0,2).substring(po, po+1);
-					System.out.println("확인해봐라 : "+stdVar);		
 					int position = mainString.indexOf(stdVar);
 					char as = mainString.charAt(position+1);
 					for(int j=po; j<8; j++){
@@ -302,7 +269,6 @@ public class MakeShortUrlName {
 				}else{	
 					po = 1;
 					String stdVar = stnKey.substring(0,2).substring(po, po+1);
-					System.out.println("확인해봐라 : "+stdVar);		
 					int position = mainString.indexOf(stdVar);
 					char as = mainString.charAt(position+1);
 					for(int j=po; j<8; j++){
@@ -313,23 +279,18 @@ public class MakeShortUrlName {
 						}
 					}
 				}
-				System.out.println("changeVar : "+changeVar);
 			}else if(stnKey.substring(1,2).equals("Y")){
-				System.out.println("1~2 라인을 들어왔습니다.");
 				String pointVar = stnKey.substring(1,2);
 				int po = 10;
-				if(stnKey.substring(0,1).lastIndexOf("Y") > -1){
+				if(stnKey.substring(0,2).lastIndexOf("Y") > -1){
 					int yIndex = stnKey.substring(0,1).lastIndexOf("Y");
 					for(int i=1;i>-1;i--){
-						System.out.println("test : "+stnKey.substring(i,i+1));
 						if(!"Y".equals(stnKey.substring(i,i+1)) && yIndex!= i){
 							po = i;
 							break;
 						}
 					}
-					System.out.println("확인해봐라 po : "+po);		
 					String stdVar = stnKey.substring(0,1).substring(po, po+1);
-					System.out.println("확인해봐라 : "+stdVar);		
 					int position = mainString.indexOf(stdVar);
 					char as = mainString.charAt(position+1);
 					for(int j=po; j<8; j++){
@@ -342,7 +303,6 @@ public class MakeShortUrlName {
 				}else{	
 					po = 0;
 					String stdVar = stnKey.substring(0,1).substring(po, po+1);
-					System.out.println("확인해봐라 : "+stdVar);		
 					int position = mainString.indexOf(stdVar);
 					char as = mainString.charAt(position+1);
 					for(int j=po; j<8; j++){
@@ -353,21 +313,15 @@ public class MakeShortUrlName {
 						}
 					}
 				}
-				System.out.println("changeVar : "+changeVar);
 			}else if(stnKey.substring(0,1).equals("Y")){
-				System.out.println("zzzzz");
 				changeVar = new StringBuilder("11111111");
-				System.out.println("맨앞이 Y인 경우이다.");
 			}
 		}else{
-			System.out.println("Y가 없을 경우이다.");
 			String stdVar = stnKey.substring(7,8);
-			System.out.println("확인해봐라 : "+stdVar);		
 			int position = mainString.indexOf(stdVar);
 			char as = mainString.charAt(position+1);
 			changeVar.setCharAt(7, as);
 		}
-		System.out.println("changeVar : "+changeVar);
 		return changeVar.toString();
 	}
 	
