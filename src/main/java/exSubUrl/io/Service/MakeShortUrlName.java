@@ -64,8 +64,11 @@ public class MakeShortUrlName {
 	 * @return
 	 */
 	private String makeShortUrl_step1(int nowSec){
+		nowSec = 0;
+		if(nowSec == 0){
+			nowSec = 1;
+		}
 		int start = 60%nowSec;
-		
 		String result = "";
 		for(int i=0;i<8;i++){
 			result += mainString.substring(start, start+1);
@@ -78,8 +81,7 @@ public class MakeShortUrlName {
 	 * @param asIsKey
 	 * @return
 	 */
-	private String makeshortUrlName_step2(String asIsKey){
-		String stnKey = asIsKey;
+	private String makeshortUrlName_step2(String stnKey){
 		StringBuilder changeVar = new StringBuilder(stnKey);
 		if(stnKey.indexOf("Y")> -1){
 			if(stnKey.substring(7,8).equals("Y")){
@@ -110,209 +112,17 @@ public class MakeShortUrlName {
 					}
 				}
 			}else if(stnKey.substring(6,7).equals("Y")){
-				String pointVar = stnKey.substring(6,7);
-				int po = 10;
-				if(stnKey.substring(0,7).lastIndexOf("Y") > -1){
-					int yIndex = stnKey.substring(0,6).lastIndexOf("Y");
-					for(int i=5;i>-1;i--){
-						if(!"Y".equals(stnKey.substring(i,i+1)) && yIndex!= i){
-							po = i;
-							break;
-						}
-					}
-					String stdVar = stnKey.substring(0,6).substring(po, po+1);
-					int position = mainString.indexOf(stdVar);
-					char as = mainString.charAt(position+1);
-					for(int j=po; j<8; j++){
-						if(j == po){
-							changeVar.setCharAt(j, as);
-						}else{
-							changeVar.setCharAt(j, '1');
-						}
-					}
-				}else{	
-					po = 5;
-					String stdVar = stnKey.substring(0,6).substring(po, po+1);
-					int position = mainString.indexOf(stdVar);
-					char as = mainString.charAt(position+1);
-					for(int j=po; j<8; j++){
-						if(j == po){
-							changeVar.setCharAt(j, as);
-						}else{
-							changeVar.setCharAt(j, '1');
-						}
-					}
-				}
+				changeVar = makeStringBuilder(6, changeVar, stnKey);
 			}else if(stnKey.substring(5,6).equals("Y")){
-				String pointVar = stnKey.substring(5,6);
-				int po = 10;
-				if(stnKey.substring(0,6).lastIndexOf("Y") > -1){
-					int yIndex = stnKey.substring(0,5).lastIndexOf("Y");
-					for(int i=4;i>-1;i--){
-						if(!"Y".equals(stnKey.substring(i,i+1)) && yIndex!= i){
-							po = i;
-							break;
-						}
-					}
-					String stdVar = stnKey.substring(0,5).substring(po, po+1);
-					int position = mainString.indexOf(stdVar);
-					char as = mainString.charAt(position+1);
-					for(int j=po; j<8; j++){
-						if(j == po){
-							changeVar.setCharAt(j, as);
-						}else{
-							changeVar.setCharAt(j, '1');
-						}
-					}
-				}else{	
-					po = 4;
-					String stdVar = stnKey.substring(0,5).substring(po, po+1);
-					int position = mainString.indexOf(stdVar);
-					char as = mainString.charAt(position+1);
-					for(int j=po; j<8; j++){
-						if(j == po){
-							changeVar.setCharAt(j, as);
-						}else{
-							changeVar.setCharAt(j, '1');
-						}
-					}
-				}
+				changeVar = makeStringBuilder(5, changeVar, stnKey);
 			}else if(stnKey.substring(4,5).equals("Y")){
-				String pointVar = stnKey.substring(4,5);
-				int po = 10;
-				if(stnKey.substring(0,5).lastIndexOf("Y") > -1){
-					int yIndex = stnKey.substring(0,4).lastIndexOf("Y");
-					for(int i=3;i>-1;i--){
-						if(!"Y".equals(stnKey.substring(i,i+1)) && yIndex!= i){
-							po = i;
-							break;
-						}
-					}
-					String stdVar = stnKey.substring(0,4).substring(po, po+1);
-					int position = mainString.indexOf(stdVar);
-					char as = mainString.charAt(position+1);
-					for(int j=po; j<8; j++){
-						if(j == po){
-							changeVar.setCharAt(j, as);
-						}else{
-							changeVar.setCharAt(j, '1');
-						}
-					}
-				}else{	
-					po = 3;
-					String stdVar = stnKey.substring(0,4).substring(po, po+1);
-					int position = mainString.indexOf(stdVar);
-					char as = mainString.charAt(position+1);
-					for(int j=po; j<8; j++){
-						if(j == po){
-							changeVar.setCharAt(j, as);
-						}else{
-							changeVar.setCharAt(j, '1');
-						}
-					}
-				}
+				changeVar = makeStringBuilder(4, changeVar, stnKey);
 			}else if(stnKey.substring(3,4).equals("Y")){
-				String pointVar = stnKey.substring(3,4);
-				int po = 10;
-				if(stnKey.substring(0,4).lastIndexOf("Y") > -1){
-					int yIndex = stnKey.substring(0,3).lastIndexOf("Y");
-					for(int i=2;i>-1;i--){
-						if(!"Y".equals(stnKey.substring(i,i+1)) && yIndex!= i){
-							po = i;
-							break;
-						}
-					}
-					String stdVar = stnKey.substring(0,3).substring(po, po+1);
-					int position = mainString.indexOf(stdVar);
-					char as = mainString.charAt(position+1);
-					for(int j=po; j<8; j++){
-						if(j == po){
-							changeVar.setCharAt(j, as);
-						}else{
-							changeVar.setCharAt(j, '1');
-						}
-					}
-				}else{	
-					po = 2;
-					String stdVar = stnKey.substring(0,3).substring(po, po+1);
-					int position = mainString.indexOf(stdVar);
-					char as = mainString.charAt(position+1);
-					for(int j=po; j<8; j++){
-						if(j == po){
-							changeVar.setCharAt(j, as);
-						}else{
-							changeVar.setCharAt(j, '1');
-						}
-					}
-				}
+				changeVar = makeStringBuilder(3, changeVar, stnKey);
 			}else if(stnKey.substring(2,3).equals("Y")){
-				String pointVar = stnKey.substring(2,3);
-				int po = 10;
-				if(stnKey.substring(0,3).lastIndexOf("Y") > -1){
-					int yIndex = stnKey.substring(0,2).lastIndexOf("Y");
-					for(int i=1;i>-1;i--){
-						if(!"Y".equals(stnKey.substring(i,i+1)) && yIndex!= i){
-							po = i;
-							break;
-						}
-					}
-					String stdVar = stnKey.substring(0,2).substring(po, po+1);
-					int position = mainString.indexOf(stdVar);
-					char as = mainString.charAt(position+1);
-					for(int j=po; j<8; j++){
-						if(j == po){
-							changeVar.setCharAt(j, as);
-						}else{
-							changeVar.setCharAt(j, '1');
-						}
-					}
-				}else{	
-					po = 1;
-					String stdVar = stnKey.substring(0,2).substring(po, po+1);
-					int position = mainString.indexOf(stdVar);
-					char as = mainString.charAt(position+1);
-					for(int j=po; j<8; j++){
-						if(j == po){
-							changeVar.setCharAt(j, as);
-						}else{
-							changeVar.setCharAt(j, '1');
-						}
-					}
-				}
+				changeVar = makeStringBuilder(2, changeVar, stnKey);
 			}else if(stnKey.substring(1,2).equals("Y")){
-				String pointVar = stnKey.substring(1,2);
-				int po = 10;
-				if(stnKey.substring(0,2).lastIndexOf("Y") > -1){
-					int yIndex = stnKey.substring(0,1).lastIndexOf("Y");
-					for(int i=1;i>-1;i--){
-						if(!"Y".equals(stnKey.substring(i,i+1)) && yIndex!= i){
-							po = i;
-							break;
-						}
-					}
-					String stdVar = stnKey.substring(0,1).substring(po, po+1);
-					int position = mainString.indexOf(stdVar);
-					char as = mainString.charAt(position+1);
-					for(int j=po; j<8; j++){
-						if(j == po){
-							changeVar.setCharAt(j, as);
-						}else{
-							changeVar.setCharAt(j, '1');
-						}
-					}
-				}else{	
-					po = 0;
-					String stdVar = stnKey.substring(0,1).substring(po, po+1);
-					int position = mainString.indexOf(stdVar);
-					char as = mainString.charAt(position+1);
-					for(int j=po; j<8; j++){
-						if(j == po){
-							changeVar.setCharAt(j, as);
-						}else{
-							changeVar.setCharAt(j, '1');
-						}
-					}
-				}
+				changeVar = makeStringBuilder(1, changeVar, stnKey);
 			}else if(stnKey.substring(0,1).equals("Y")){
 				changeVar = new StringBuilder("11111111");
 			}
@@ -323,6 +133,50 @@ public class MakeShortUrlName {
 			changeVar.setCharAt(7, as);
 		}
 		return changeVar.toString();
+	}
+	
+	/**
+	 * makeshortUrlName_step2 파생 기능 
+	 * @param index
+	 * @param changeVar
+	 * @param stnKey
+	 * @return
+	 */
+	private StringBuilder makeStringBuilder(int index, StringBuilder changeVar, String stnKey){
+		String pointVar = stnKey.substring(index,index+1);
+		int po = 10;
+		if(stnKey.substring(0,index+1).lastIndexOf("Y") > -1){
+			int yIndex = stnKey.substring(0,index).lastIndexOf("Y");
+			for(int i=index-1;i>-1;i--){
+				if(!"Y".equals(stnKey.substring(i,i+1)) && yIndex!= i){
+					po = i;
+					break;
+				}
+			}
+			String stdVar = stnKey.substring(0,index).substring(po, po+1);
+			int position = mainString.indexOf(stdVar);
+			char as = mainString.charAt(position+1);
+			for(int j=po; j<8; j++){
+				if(j == po){
+					changeVar.setCharAt(j, as);
+				}else{
+					changeVar.setCharAt(j, '1');
+				}
+			}
+		}else{	
+			po = index-1;
+			String stdVar = stnKey.substring(0,index).substring(po, po+1);
+			int position = mainString.indexOf(stdVar);
+			char as = mainString.charAt(position+1);
+			for(int j=po; j<8; j++){
+				if(j == po){
+					changeVar.setCharAt(j, as);
+				}else{
+					changeVar.setCharAt(j, '1');
+				}
+			}
+		}
+		return changeVar;
 	}
 	
 	/**
