@@ -64,7 +64,6 @@ public class MakeShortUrlName {
 	 * @return
 	 */
 	private String makeShortUrl_step1(int nowSec){
-		nowSec = 0;
 		if(nowSec == 0){
 			nowSec = 1;
 		}
